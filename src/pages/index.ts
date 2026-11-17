@@ -1,0 +1,12 @@
+export { Landing } from './Landing';
+export { SelectPage } from './SelectPage';
+export { FormEditor } from './FormEditor';
+export { FormEval } from './FormEval';
+export { SchuleHistory } from './SchuleHistory';
+export { SchuleNew } from './SchuleNew';
+export { AufsichtNew } from './AufsichtNew';
+export { AufsichtAll } from './AufsichtAll';
+export { SchuleSubmissionView } from './SchuleSubmissionView';
+export { AufsichtSubmissionView } from './AufsichtSubmissionView';
+export { About } from './About';
+export { Data } from './Data';

@@ -1,0 +1,40 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import federation from '@originjs/vite-plugin-federation';
+
+export default defineConfig({
+  // IMPORTANT for GitHub Pages deployment
+  base: '/dash-zhv/',
+
+  plugins: [
+    react(),
+    federation({
+      name: 'dash-zhv',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './ScpApp': './src/App.tsx',
+      },
+
+      shared: ['react', 'react-dom']
+
+    }),
+  ],
+
+  server: {
+    host: true,
+    port: 5174,
+    cors: true,
+  },
+
+  preview: {
+    host: true,
+    port: 5174,
+  },
+
+  build: {
+    target: 'esnext',
+    cssCodeSplit: false,
+    // OriginJS's CSS placeholder replacement does not recognize Vite 8's minified backticks.
+    minify: false,
+  },
+});

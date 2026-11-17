@@ -1,0 +1,261 @@
+/* ===================================================================
+   APP-LEVEL LAYOUT & COMPONENTS
+   ===================================================================
+   Application structure and component-level styles.
+   All design tokens (colors, shadows, etc.) are defined in index.css
+   =================================================================== */
+
+/* Application Structure */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation/Header */
+.app-nav {
+  padding: 1rem;
+  border-bottom: 1px solid var(--form-border);
+  display: flex;
+  gap: 1rem;
+}
+
+/* Main Content Area */
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Buttons */
+.app-button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 1px solid var(--form-border);
+  border-radius: 4px;
+  background: var(--form-bg);
+  color: var(--form-text);
+  font-family: inherit;
+  transition: var(--form-transition);
+}
+
+.app-button:hover:not(:disabled) {
+  background: var(--form-bg-hover);
+  border-color: var(--form-primary);
+}
+
+.app-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Sections */
+.app-section {
+  margin: 2rem 0;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+/* Headers */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Footers */
+.app-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--form-border);
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* Forms */
+.app-form {
+  padding: 1rem;
+}
+
+/* ===================================================================
+   Role/View Switch Navigation
+   =================================================================== */
+.role-switch {
+  display: inline-flex;
+  gap: 0;
+  width: fit-content;
+  background: var(--form-bg-hover);
+  padding: 0.35rem;
+  border-radius: 10px;
+  border: 1px solid var(--form-border);
+}
+
+.role-tab {
+  padding: 0.6rem 1.5rem;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--form-text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  white-space: nowrap;
+  position: relative;
+  letter-spacing: 0.02em;
+  transition: var(--form-transition);
+}
+
+.role-tab:hover:not(.is-active) {
+  background: rgba(30, 138, 217, 0.08);
+  color: var(--form-primary);
+}
+
+.role-tab.is-active {
+  background: var(--form-bg);
+  color: var(--form-primary);
+  border: 1px solid var(--form-border);
+  font-weight: 600;
+  box-shadow: var(--form-shadow-focus);
+}
+
+/* ===================================================================
+   Tab Navigation Styles
+   =================================================================== */
+.tab-navigation {
+  margin-top: 2rem;
+  border-bottom: 2px solid #ddd;
+  overflow: visible;
+}
+
+.tab-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  background: transparent;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.tab-button:hover {
+  background: #f0f0f0;
+}
+
+.tab-button.active {
+  font-weight: 600;
+  background: #1E8AD9;
+  color: white;
+  border-bottom: 3px solid #1E8AD9;
+  margin-bottom: -2px;
+}
+
+.tab-button:not(.active) {
+  border-bottom: none;
+}
+
+/* ===================================================================
+   Filter Section Styles
+   =================================================================== */
+.filter-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--form-bg-hover);
+  border: 1px solid var(--form-border);
+  border-radius: 8px;
+}
+
+.filter-section h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--form-text);
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.filter-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--form-text);
+  margin: 0;
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.filter-button {
+  padding: 0.65rem 1.5rem;
+  background-color: var(--form-primary);
+  color: white;
+  border: 1px solid var(--form-primary);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--form-transition);
+  white-space: nowrap;
+}
+
+.filter-button:hover:not(:disabled) {
+  background-color: #0d6bb6;
+  border-color: #0d6bb6;
+  box-shadow: var(--form-shadow-focus);
+}
+
+.filter-button:active:not(:disabled) {
+  background-color: #0a5190;
+  border-color: #0a5190;
+}
+
+.filter-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  .filter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+}
