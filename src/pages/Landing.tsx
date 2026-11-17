@@ -1,5 +1,6 @@
 import type { ShellAppProps } from '../types';
 import './Landing.css';
+import { FilePenLine, Handshake, UsersCollaboration } from 'lucide-react';
 
 interface LandingProps extends ShellAppProps {
   onNavigate: (view: 'landing' | 'select' | 'form' | 'history' | 'view' | 'new' | 'all') => void;
@@ -77,10 +78,7 @@ export function Landing({ onNavigate, shellContext }: LandingProps) {
         <div className="landing-benefits-visual">
           <div className="landing-benefit">
             <div className="landing-benefit-icon landing-icon-blue">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 3h7l5 5v13H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
-                <path d="M14 3v5h5M9 13h6M9 17h6M3 8l2 2 3-3" />
-              </svg>
+              <FilePenLine />
             </div>
             <div className="landing-benefit-copy">
               <span className="landing-benefit-number">01 / DIGITALISIERUNG</span>
@@ -94,10 +92,7 @@ export function Landing({ onNavigate, shellContext }: LandingProps) {
 
           <div className="landing-benefit">
             <div className="landing-benefit-icon landing-icon-turquoise">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 4a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z" />
-                <path d="M8 12h8M8 9h5M8 15h6" />
-              </svg>
+              <Handshake />
             </div>
             <div className="landing-benefit-copy">
               <span className="landing-benefit-number">02 / ZUSAMMENARBEIT</span>
@@ -110,12 +105,7 @@ export function Landing({ onNavigate, shellContext }: LandingProps) {
 
           <div className="landing-benefit">
             <div className="landing-benefit-icon landing-icon-lightblue">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="7" r="3" />
-                <circle cx="5" cy="17" r="2.5" />
-                <circle cx="19" cy="17" r="2.5" />
-                <path d="M9.5 8.5 6.5 14.5M14.5 8.5l3 6M7.5 17h9" />
-              </svg>
+              <UsersCollaboration />
             </div>
             <div className="landing-benefit-copy">
               <span className="landing-benefit-number">03 / VERNETZUNG</span>
