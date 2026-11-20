@@ -63,7 +63,7 @@ function AppContent({ shellContext }: ShellAppProps) {
   };
 
   return (
-    <div className="app">
+    <div className="app mfe-scp">
       <main>
         {renderView()}
         {currentView === ROUTES.LANDING && <Footer onNavigate={handleNavigate} />}
